@@ -1,10 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import img1 from './assets/photo-1500835556837-99ac94a94552.jpg';
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import posts from './assets/posts.json';
+import posts from '../assets/posts.json';
+import { Link } from "react-router-dom";
+
 
 export default function Latest() {
   return (
@@ -41,7 +42,8 @@ export default function Latest() {
         {/* شبكة الكروت */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" dir="rtl">
           {posts.posts?.slice(3, 6).map((item, index) => (
-            <div 
+           <Link to={`/blog/${item.slug}`}>
+           <div 
               key={index} 
               className="group bg-[#161616] hover:-translate-y-1 rounded-2xl border border-[#262626] hover:border-orange-500/30 overflow-hidden flex flex-col justify-between transition-all duration-300"
             >
@@ -98,6 +100,7 @@ export default function Latest() {
               </div>
 
             </div>
+            </Link>
           ))}
         </div>
 

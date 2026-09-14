@@ -1,43 +1,20 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import Home from './Home.jsx'
-import Subscribe from './Subscribe.jsx'
-import Layout from './Layout.jsx' // لو كنت تستخدم Layout رئيسي
+import Home from './Pages/Home.jsx'
+import Post from './Pages/Post.jsx'
+import Subscribe from './components/Subscribe.jsx'
+import Layout from './components/Layout.jsx' // لو كنت تستخدم Layout رئيسي
 import { createBrowserRouter, RouterProvider } from 'react-router-dom' // <- التعديل هنا (إضافة -dom)
+import Latest from './components/Latest.jsx'
+import Blog from './Pages/Blog.jsx'
 
 // تعريف المسارات
 const routes = createBrowserRouter([
-  { 
-    path: '/', 
-    element: (
-      <>
-        <Navbar />
-        <Home />
-        <Footer />
-      </>
-    ) 
-  },
-  { 
-    path: '/home', 
-    element: (
-      <>
-        <Navbar />
-        <Home />
-        <Footer />
-      </>
-    ) 
-  },
-  { 
-    path: '/blog', 
-    element: (
-      <>
-        <Navbar />
-        <Subscribe />
-        <Footer />
-      </>
-    ) 
-  }
+  {path:'', element:<Layout/>, children:[
+    {path:"home" ,element:<Home/>},
+  {path:"blog",element:<Blog/>},
+  {path:'blog/:slug', element:<Post/>},
+{path:"about",element:<Latest/>}]} 
+
 ]);
 
 export default function App() {

@@ -1,5 +1,5 @@
 import React from "react";
-import siteInfo from './assets/posts.json'
+import siteInfo from '../assets/posts.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faGithub, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";

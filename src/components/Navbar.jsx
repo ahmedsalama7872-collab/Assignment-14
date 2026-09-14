@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import logo from './assets/logo-GdqARQRt.png';
-
+import logo from '../assets/logo-GdqARQRt.png'
+import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -15,9 +15,9 @@ export default function Navbar() {
           
           {/* left nav */}
           <div className="md:flex hidden gap-4 justify-between items-center">
-            <button className="w-32 rounded-3xl bg-gradient h-12 hover:-translate-y-0.5 text-white text-sm transition-all duration-300 font-semibold cursor-pointer">
+            <Link to={"/blog"} className="w-32 flex justify-center items-center rounded-3xl bg-gradient h-12 hover:-translate-y-0.5 text-white text-sm transition-all duration-300 font-semibold cursor-pointer">
               ابدأ القراءة
-            </button>
+            </Link>
             <div className="w-10 h-10 border hover:bg-[#161616] border-transparent transition-all duration-300 hover:border-[#262626] rounded-lg text-[#444444] flex justify-center items-center hover:text-main cursor-pointer">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </div>
@@ -54,13 +54,15 @@ export default function Navbar() {
           </div>
 
           {/* right nav */}
+          <Link to={"/home"} className="group">
           <div className="flex items-center text-white text-end gap-2.5">
             <div>
               <h3 className="text-2xl font-bold">عدسة</h3>
               <p className="text-xs text-[#A25A0B] hidden sm:block">عالم التصوير الفوتوغرافي</p>
             </div>
-            <img alt="Photography Logo" src={logo} className="w-12" />
+            <img alt="Photography Logo" src={logo} className="w-12 group-hover:scale-105 duration-300 transition-all" />
           </div>
+          </Link>
 
         </div>
       </div>

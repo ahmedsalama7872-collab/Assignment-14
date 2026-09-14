@@ -1,11 +1,11 @@
 import React from "react";
     import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-    import img1 from './assets/photo-1500835556837-99ac94a94552.jpg'
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
     import { faStar } from "@fortawesome/free-solid-svg-icons";
     import { faClock } from "@fortawesome/free-regular-svg-icons";
     import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
-    import posts from './assets/posts.json'
+    import posts from '../assets/posts.json'
+import { Link } from "react-router-dom";
     export default function Special() {
     return (
         <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
@@ -46,7 +46,7 @@ import React from "react";
             {/* card */}
 {posts.posts?.slice(0, 3).map((item, index) => (
  
-
+<Link to={`/blog/${item.slug}`}>
         <div key={index} dir="rtl" className=" grid grid-cols-1 group overflow-hidden md:grid-cols-2 gap-0 rounded-2xl border border-[#262626] hover:border-orange-500/30">
        {/* image */}
         <div className="overflow-hidden relative">
@@ -92,6 +92,7 @@ import React from "react";
            </div>
         </div>
         </div>
+                    </Link>
  
 ))}
 

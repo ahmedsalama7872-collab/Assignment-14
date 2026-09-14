@@ -1,8 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import img1 from './assets/photo-1500835556837-99ac94a94552.jpg';
-
+import img1 from '../assets/photo-1500835556837-99ac94a94552.jpg'
 export default function Newsletter() {
   return (
     <section className="py-24 bg-[#0a0a0a] relative overflow-hidden flex justify-center items-center px-4">
