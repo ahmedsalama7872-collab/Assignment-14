@@ -2,7 +2,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 
-export default function BlogNav({cat,setCat,searched,setSearched,filter,setFilter}) {
+export default function BlogNav({cat,setCat,searched,setSearched,filter,setFilter,art,setArt}) {
    
 
   return (
@@ -14,12 +14,12 @@ export default function BlogNav({cat,setCat,searched,setSearched,filter,setFilte
                     <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500'/>
                 </div>
                 <div className='flex flex-wrap items-center justify-center gap-2'>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='جميع المقالات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('جميع المقالات');!searched&&setFilter(false)}}>جميع المقالات</button>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='إضاءة'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('إضاءة');setFilter(true)}}>اضاءة</button>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='بورتريه'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('بورتريه');setFilter(true)}}>بورتريه</button>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='مناظر طبيعية'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('مناظر طبيعية');setFilter(true)}}>مناظر طبيعية</button>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='تقنيات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('تقنيات');setFilter(true)}}>تقنيات</button>
-                    <button className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='معدات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('معدات');setFilter(true)}}>معدات</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='جميع المقالات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('جميع المقالات');!searched&&setFilter(false);setArt(0)}}>جميع المقالات</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='إضاءة'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('إضاءة');setFilter(true);setArt(0)}}>اضاءة</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='بورتريه'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('بورتريه');setFilter(true);setArt(0)}}>بورتريه</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='مناظر طبيعية'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('مناظر طبيعية');setFilter(true);setArt(0)}}>مناظر طبيعية</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='تقنيات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('تقنيات');setFilter(true);setArt(0)}}>تقنيات</button>
+                    <button  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer border-0 ${cat==='معدات'?`bg-gradient-to-r from-orange-500 to-orange-600 text-white`:` bg-[#161616] text-neutral-400 border border-[#262626] hover:border-orange-500/30`}`} onClick={()=>{setCat('معدات');setFilter(true);setArt(0)}}>معدات</button>
 
 
 

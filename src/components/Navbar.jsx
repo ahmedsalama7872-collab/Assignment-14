@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import logo from '../assets/logo-GdqARQRt.png'
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+const location=useLocation()
   return (
     <>
       {/* الـ Navbar الأساسية */}
@@ -27,19 +27,19 @@ export default function Navbar() {
           <div className="border border-[#262626] w-2xs h-13 rounded-full md:flex p-1.5 justify-between items-center hidden">
             <NavLink 
               to="/about" 
-              className={({ isActive }) => `w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${isActive ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
+              className={`w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${location.pathname==='/about' ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
             >
               من نحن
             </NavLink>
             <NavLink 
               to="/blog" 
-              className={({ isActive }) => `w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${isActive ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
+              className={`w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${location.pathname.startsWith('/blog') ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
             >
               المدونة
             </NavLink>
             <NavLink 
               to="/home" 
-              className={({ isActive }) => `w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${isActive ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
+              className={`w-1/3 rounded-full h-full flex items-center justify-center transition-all cursor-pointer ${location.pathname==='/'||location.pathname==='/home' ? "bg-gradient text-white" : "text-white hover:text-orange-500"}`}
             >
               الرئيسية
             </NavLink>

@@ -1,4 +1,3 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import img1 from '../assets/photo-1500835556837-99ac94a94552.jpg'
@@ -24,16 +23,16 @@ export default function Newsletter() {
         </p>
 
         {/* نموذج الإدخال */}
-        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mb-6" dir="rtl">
+        <form className="flex flex-col sm:flex-row gap-3 w-full max-w-xl mb-6" dir="rtl">
           <input 
             type="email" 
             placeholder="أدخل بريدك الإلكتروني" 
             className="flex-1 bg-[#0a0a0a] border border-[#262626] focus:border-orange-500 outline-none px-5 py-4 rounded-xl text-white text-sm placeholder:text-neutral-600 transition-colors duration-300"
           />
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-xl transition-colors duration-300 cursor-pointer shadow-lg shadow-orange-500/20">
+          <button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-xl transition-colors duration-300 cursor-pointer shadow-lg shadow-orange-500/20">
             اشترك الآن
           </button>
-        </div>
+        </form>
 
         {/* إحصائيات المشتركين والصور */}
         <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-neutral-400" dir="rtl">

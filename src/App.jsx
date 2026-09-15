@@ -10,6 +10,7 @@ import Blog from './Pages/Blog.jsx'
 // تعريف المسارات
 const routes = createBrowserRouter([
   {path:'', element:<Layout/>, children:[
+    {index:true,element:<Home/>},
     {path:"home" ,element:<Home/>},
   {path:"blog",element:<Blog/>},
   {path:'blog/:slug', element:<Post/>},

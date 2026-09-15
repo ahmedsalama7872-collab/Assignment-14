@@ -1,6 +1,5 @@
-import { faBlog, faNewspaper } from '@fortawesome/free-solid-svg-icons'
+import {faNewspaper } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
 
 export default function BlogHero() {
   return (

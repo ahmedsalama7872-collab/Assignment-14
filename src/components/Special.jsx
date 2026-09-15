@@ -13,14 +13,14 @@ import { Link } from "react-router-dom";
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col-reverse md:flex-row justify-between items-end  mb-12 gap-4">
-            <button className="bg-gradient w-30 h-12 rounded-xl text-white flex items-center justify-center group hover:-translate-y-0.5 cursor-pointer duration-300 transition-all">
+            <Link to={"/blog"} className="bg-gradient w-30 h-12 rounded-xl text-white flex items-center justify-center group hover:-translate-y-0.5 cursor-pointer duration-300 transition-all">
                 {" "}
                 <FontAwesomeIcon
                 icon={faAngleLeft}
                 className=" group-hover:-translate-x-1 duration-300 transition-all"
                 />{" "}
                 عرض الكل
-            </button>
+            </Link>
 
             <div className="flex flex-col items-end">
                 <div className='w-26 gap-5.5 mb-8 py-5  relative border border-amber-600 bg-[#24160B] h-8 rounded-full text-white flex items-center px-4 animate-fade-in before:content-[""] before:absolute before:w-2 before:h-2 before:bg-amber-600 before:rounded-full before:right-2 before:animate-pulse'>

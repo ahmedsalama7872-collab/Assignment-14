@@ -1,18 +1,40 @@
-import React, { useState } from 'react'
 import BlogHero from '../components/BlogHero'
 import Articles from '../components/Articles'
 import BlogNav from '../components/BlogNav'
+import { useLocation, useOutletContext } from 'react-router-dom';
+import { useEffect } from 'react';
 export default function Blog() {
-  
-  const [cat,setCat]=useState('جميع المقالات')
-  const [searched,setSearched]=useState('')
-  const [filter,setFilter]=useState('')
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+ const {
+    cat,
+    setCat,
+    searched,
+    setSearched,
+    filter,
+    setFilter,
+    art,
+    setArt,
+    scroll,
+    setScroll
+  } = useOutletContext();
+ useEffect(() => {
+  if (scroll) {
+    window.scrollTo(0, 0);
+    setScroll(false);
+  }
+}, [scroll]);
+
     return (
 
     <section className='mt-20 bg-[#0a0a0a]  '>
         <BlogHero/>
-        <BlogNav cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter}/>
-        <Articles cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter} />
+        <BlogNav cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter} art={art} setArt={setArt}/>
+        <Articles cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter} art={art} setArt={setArt}/>
     </section>
   )
 }

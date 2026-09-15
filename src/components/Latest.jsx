@@ -15,12 +15,12 @@ export default function Latest() {
         
         {/* الهيدر */}
         <div className="flex flex-col-reverse  md:flex-row justify-between items-end md:items-end mb-16 gap-6">
-          <div className="flex items-center gap-2 text-orange-500 cursor-pointer group font-medium">
+          <Link to={'/blog'} className="flex items-center gap-2 text-orange-500 cursor-pointer group font-medium">
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               <FontAwesomeIcon icon={faArrowLeftLong} />
             </span>
             <span>عرض جميع المقالات</span>
-          </div>
+          </Link>
 
           <div className="flex flex-col items-end md:items-end text-right w-full md:w-auto">
             <div className='w-26 gap-3.5 mb-6 py-5 relative border border-amber-600 bg-[#24160B] h-8 rounded-full text-white flex items-center px-4 animate-fade-in before:content-[""] before:absolute before:w-2 before:h-2 before:bg-amber-600 before:rounded-full before:right-2.5 before:animate-pulse'>

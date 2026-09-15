@@ -3,8 +3,9 @@ import siteInfo from '../assets/posts.json'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faGithub, faLinkedinIn, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
-export default function Footer() {
+export default function Footer({setArt,setCat,setFilter,setScroll }) {
   return (
     <footer className="relative bg-[#0a0a0a] text-neutral-400 pt-16 pb-8 border-t border-[#262626] overflow-hidden" dir="rtl">
         {/* أضيفت pointer-events-none هنا لمنع الخلفيات من تغطية أو منع تفاعل الماوس مع العناصر */}
@@ -28,16 +29,16 @@ export default function Footer() {
               مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم.
             </p>
             <div className="flex items-center flex-row-reverse gap-3">
-              <a href="#youtube" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
+              <a href={siteInfo.siteInfo.social.youtube} target="_blank" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
-              <a href="#linkedin" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
+              <a href={siteInfo.siteInfo.social.linkedin} target="_blank" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
                 <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
-              <a href="#github" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
+              <a href={siteInfo.siteInfo.social.github} target="_blank" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
-              <a href="#twitter" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
+              <a href={siteInfo.siteInfo.social.twitter} target="_blank" className="w-10 h-10 rounded-xl bg-[#161616] border border-[#262626] flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300">
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </div>
@@ -51,28 +52,28 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#home" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/home'} className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>الرئيسية</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#blog" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/blog'} className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>المدونة</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/about'} className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
-                  <span>من نحن</span>
-                </a>
+                  <span >من نحن</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -85,36 +86,36 @@ export default function Footer() {
             </div>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#lighting" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/blog'} onClick={()=>{setCat('إضاءة');setArt(0);setScroll(true)}}  className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>إضاءة</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#portrait" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/blog'} onClick={()=>{setCat('بورتريه');setArt(0);setScroll(true)}}  className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>بورتريه</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#landscape" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/blog'} onClick={()=>{setCat('مناظر طبيعية');setArt(0);setScroll(true)}}  className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>مناظر طبيعية</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#techniques" className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
+                <Link to={'/blog'} onClick={()=>{setCat('تقنيات');setArt(0);setScroll(true)}}    className="group flex items-center hover:-translate-x-2 gap-2 hover:text-orange-500 transition-all duration-300">
                   <span className="opacity-0 group-hover:opacity-100 transition-all duration-300 text-orange-500 text-xs">
                     <FontAwesomeIcon icon={faChevronLeft} />
                   </span>
                   <span>تقنيات</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

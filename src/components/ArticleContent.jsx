@@ -32,9 +32,9 @@ export default function ArticleContent({post}) {
 
             <nav className='flex-col flex'>
                 {sectionsTitle.map((el,index)=>{
-                    return(<>
-                    <a href={`/blog/${post.slug}#section-${index}`} className='flex items-center gap-3 p-3 rounded-xl text-neutral-400 hover:text-orange-500 hover:bg-orange-500/5 transition-all duration-300 group'><span className='flex items-center justify-center w-6 h-6 bg-[#1a1a1a] rounded-lg text-xs font-bold text-neutral-500 group-hover:bg-orange-500/10 group-hover:text-orange-500 transition-colors'>{index+1}</span>{el.replace("## ","")} </a>
-                    </>)
+                    return(
+                    <a key={index} href={`/blog/${post.slug}#section-${index}`} className='flex items-center gap-3 p-3 rounded-xl text-neutral-400 hover:text-orange-500 hover:bg-orange-500/5 transition-all duration-300 group'><span className='flex items-center justify-center w-6 h-6 bg-[#1a1a1a] rounded-lg text-xs font-bold text-neutral-500 group-hover:bg-orange-500/10 group-hover:text-orange-500 transition-colors'>{index+1}</span>{el.replace("## ","")} </a>
+                    )
                 })}
             </nav>
 
@@ -107,7 +107,7 @@ export default function ArticleContent({post}) {
 
              {sectionsTitle.map((item,index)=>{
         
-        return (<>
+        return ( <React.Fragment key={index}>
         <h2 dir='rtl' id={`section-${index}`} className='text-2xl md:text-3xl font-bold text-white mt-14 mb-6 flex items-center gap-4 scroll-mt-24'>
             <span className='flex items-center justify-center w-10 h-10 bg-orange-500/10 rounded-xl border border-orange-500/30'>
             <FontAwesomeIcon icon={faCamera} className='text-orange-500' />
@@ -115,8 +115,9 @@ export default function ArticleContent({post}) {
             {item.replace("## ","")}
         </h2>
         <p className='text-neutral-300 leading-relaxed mb-6 text-lg ' dir='rtl'>{paragraphs[index+1]}</p>
-    
-        </>
+        </React.Fragment>
+
+        
     )
       })}
         <div dir='rtl' className='mt-14 p-6 bg-[#111111] rounded-2xl border border-[#262626]'>
@@ -128,9 +129,9 @@ export default function ArticleContent({post}) {
             </div>
             <div className='flex flex-wrap gap-2'>
                 {post.tags.map((tag)=>{
-                    return (<>
-                    <span className='px-4 py-2 bg-[#1a1a1a] text-neutral-400 text-sm rounded-full border border-[#262626] hover:border-orange-500/50 hover:text-orange-500 transition-colors cursor-pointer'>#{tag}</span>
-                    </>)
+                    return (
+                    <span key={tag} className='px-4 py-2 bg-[#1a1a1a] text-neutral-400 text-sm rounded-full border border-[#262626] hover:border-orange-500/50 hover:text-orange-500 transition-colors cursor-pointer'>#{tag}</span>
+                    )
                 })}
             </div>
         </div>
