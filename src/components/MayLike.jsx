@@ -55,7 +55,7 @@ export default function MayLike({post}) {
 
 
         {/* like card */}
-       {filtered.splice(0,3).map((card)=>{
+       {filtered.slice(0,3).map((card)=>{
         return ( <Link to={`/blog/${card.slug}`} key={card.id}>
         <div className="group relative bg-[#111111] rounded-2xl  border border-[#262626] hover:border-orange-500/30 transition-all duration-500 grid-flow-col grid grid-rows-[190px_110px]  overflow-hidden">
             <div className="overflow-hidden relative">

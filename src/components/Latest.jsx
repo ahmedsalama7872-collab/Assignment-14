@@ -42,9 +42,9 @@ export default function Latest() {
         {/* شبكة الكروت */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" dir="rtl">
           {posts.posts?.slice(3, 6).map((item, index) => (
-           <Link to={`/blog/${item.slug}`}>
+           <Link key={index}  to={`/blog/${item.slug}`}>
            <div 
-              key={index} 
+              
               className="group bg-[#161616] hover:-translate-y-1 rounded-2xl border border-[#262626] hover:border-orange-500/30 overflow-hidden flex flex-col justify-between transition-all duration-300"
             >
               <div>
@@ -54,7 +54,7 @@ export default function Latest() {
                     {item.category}
                   </span>
                   <img 
-                    src={item.image || img1} 
+                    src={item.image} 
                     alt={item.title} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
                   />
@@ -84,7 +84,7 @@ export default function Latest() {
               <div className="p-6 pt-0 flex justify-between items-center mt-4">
                 <div className="flex items-center gap-3">
                   <img 
-                    src={item.author?.avatar || img1} 
+                    src={item.author?.avatar} 
                     alt={item.author?.name} 
                     className="w-10 h-10 rounded-full object-cover border border-neutral-700" 
                   />

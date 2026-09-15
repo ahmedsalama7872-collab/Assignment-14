@@ -5,7 +5,7 @@ import { faXTwitter, faGithub, faLinkedinIn, faYoutube } from "@fortawesome/free
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export default function Footer({setArt,setCat,setFilter,setScroll }) {
+export default function Footer({setArt,setCat,setScroll }) {
   return (
     <footer className="relative bg-[#0a0a0a] text-neutral-400 pt-16 pb-8 border-t border-[#262626] overflow-hidden" dir="rtl">
         {/* أضيفت pointer-events-none هنا لمنع الخلفيات من تغطية أو منع تفاعل الماوس مع العناصر */}

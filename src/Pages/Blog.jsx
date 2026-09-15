@@ -1,7 +1,7 @@
 import BlogHero from '../components/BlogHero'
 import Articles from '../components/Articles'
 import BlogNav from '../components/BlogNav'
-import { useLocation, useOutletContext } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { useEffect } from 'react';
 export default function Blog() {
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Blog() {
     window.scrollTo(0, 0);
     setScroll(false);
   }
-}, [scroll]);
+}, [scroll, setScroll]);
 
     return (
 

@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import {
   faChevronLeft,
   faHouse,
@@ -21,13 +22,10 @@ export default function ArticleHero({post}) {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/30 to-transparent"></div>
 
-      <div className="relative z-10 min-h-[500px] flex items-center">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className=" mx-auto">
-
+      <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
             {/* Breadcrumb */}
-            <div className="flex right-7 top-30 justify-end mb-28">
-              <div className="flex items-center gap-4 bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-3 text-sm">
+            <div className="flex absolute right-10 top-0 justify-end mb-28">
+              <div className="flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-5 py-2 text-sm">
 
                 <span className="text-orange-500 font-semibold">
                   {post.category}
@@ -37,21 +35,25 @@ export default function ArticleHero({post}) {
                   <FontAwesomeIcon icon={faChevronLeft} />
                 </span>
 
-                <span className="text-gray-300">
+                <Link to={'/blog'} className="text-gray-300  hover:text-white">
                   المدونة
-                </span>
+                </Link>
 
                 <span className="text-gray-400">
                   <FontAwesomeIcon icon={faChevronLeft} />
                 </span>
-
+                  <Link to={'/home'} className="text-gray-300 hover:text-white">
                 <FontAwesomeIcon
                   icon={faHouse}
-                  className="text-gray-300"
-                />
+                  
+                  />
+                  </Link>
 
               </div>
             </div>
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+          <div className=" mx-auto">
+
 <div className="max-w-5xl mx-auto">
 
             {/* Meta Information */}

@@ -100,12 +100,13 @@ const location=useLocation()
             من نحن
           </NavLink>
 
-          <button 
+          <Link
+          to={'/blog'} 
             onClick={() => setIsOpen(false)}
-            className="w-full rounded-full bg-gradient h-14 text-white text-base font-semibold shadow-lg shadow-orange-500/20 mt-2 cursor-pointer"
+            className="w-full rounded-full flex justify-center items-center bg-gradient h-14 hover:-translate-y-0.5 duration-300 transition-all text-white text-base font-semibold shadow-lg shadow-orange-500/20 mt-2 cursor-pointer"
           >
             ابدأ القراءة
-          </button>
+          </Link>
 
         </div>
       </div>

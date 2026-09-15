@@ -6,6 +6,7 @@ import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 import { faUsers} from "@fortawesome/free-solid-svg-icons";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -32,16 +33,17 @@ export default function Hero() {
           انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير
         </p>
         <div className="flex flex-col-reverse sm:flex-row justify-center gap-4 mb-16">
-          <a
-            href="/blog"
+          <Link
+            to={"/about"}
             className="flex gap-3 items-center text-white justify-center hover:bg-main/10 hover:text-main duration-300 transition-all hover:border-main border px-7 py-4 border-white/30 rounded-full"
           >
+            
             <span>اعرف المزيد</span>
             <FontAwesomeIcon icon={faCircleExclamation} />
-          </a>
+          </Link>
 
-          <a
-            href="/blog"
+          <Link
+            to={"/blog"}
             className="flex gap-3 group items-center bg-gradient justify-center hover:-translate-y-0.5 duration-300 transition-all  px-8 py-4 text-white rounded-full"
           >
             <FontAwesomeIcon
@@ -49,7 +51,7 @@ export default function Hero() {
               className="group-hover:-translate-x-1 duration-300 transition-all"
             />
             <span>استكشف المقالات</span>
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
@@ -67,7 +69,7 @@ export default function Hero() {
               icon={faFolderOpen}
               className="text-orange-500 mb-1 clip fa-xl"
             />
-            <span className="text-3xl text-gradient font-semibold">4</span>
+            <span className="text-3xl text-gradient font-semibold">5</span>
             <span className="text-neutral-400">تصنيفات</span>
           </div>
           <div className="bg-[#161616cc] border border-[#262626] flex  flex-col justify-center items-center rounded-2xl p-4 hover:scale-105 transition-transform duration-300">

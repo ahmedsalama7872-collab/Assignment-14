@@ -1,13 +1,16 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar, faCamera, faClock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faTags } from '@fortawesome/free-solid-svg-icons';
-import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
-import { faXTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
-import { faList } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCalendar,
+  faCamera,
+  faClock,
+  faEnvelope,
+  faTags,
+  faShareNodes,
+  faLink,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
+import { faXTwitter,faLinkedin,faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 export default function ArticleContent({post}) {
 
@@ -46,14 +49,14 @@ export default function ArticleContent({post}) {
         <div className='p-6 bg-[#111111] rounded-2xl border border-[#262626]'>
             <div className='grid grid-cols-2 gap-4'>
                 <div className='text-center p-4 bg-[#0a0a0a] rounded-xl'>
-                    <FontAwesomeIcon icon={faClock} className='fa-regular fa-clock text-orange-500 text-xl mb-2'/>
+                    <FontAwesomeIcon icon={faClock} className='text-orange-500 text-xl mb-2'/>
                     <p className='text-white font-bold'>{post.readTime}</p>
                     <p className='text-neutral-500 text-xs'>وقت القراءة</p>
                 </div>
 
 
                 <div className='text-center p-4 bg-[#0a0a0a] rounded-xl'>
-                    <FontAwesomeIcon icon={faCalendar} className='fa-regular fa-clock text-orange-500 text-xl mb-2'/>
+                    <FontAwesomeIcon icon={faCalendar} className='text-orange-500 text-xl mb-2'/>
                     <p className='text-white font-bold'>{post.date}</p>
                     <p className='text-neutral-500 text-xs'>تاريخ النشر</p>
                 </div>
@@ -123,7 +126,7 @@ export default function ArticleContent({post}) {
         <div dir='rtl' className='mt-14 p-6 bg-[#111111] rounded-2xl border border-[#262626]'>
             <div className='flex items-center gap-3 mb-4'>
                 <div className='w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center border border-orange-500/30'>
-                <FontAwesomeIcon className='fa-solid fa-tags text-orange-500' icon={faTags}/>
+                <FontAwesomeIcon className='text-orange-500' icon={faTags}/>
                 </div>
                 <span className='font-bold text-white'>الوسوم</span>
             </div>
@@ -147,16 +150,16 @@ export default function ArticleContent({post}) {
                     <span className='font-bold text-white'>شارك المقال</span>
                 </div>
                 <div className='flex gap-2'>
-                    <div className='w-11 h-11 bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#1da1f2] hover:text-white hover:border-transparent transition-all duration-300'>
+                    <div className='w-11 cursor-pointer h-11 bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#1da1f2] hover:text-white hover:border-transparent transition-all duration-300'>
                         <FontAwesomeIcon icon={faXTwitter}/>
                     </div>
-                    <div className='w-11 h-11 bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#0077b5] hover:text-white hover:border-transparent transition-all duration-300'>
+                    <div className='w-11 h-11 cursor-pointer bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#0077b5] hover:text-white hover:border-transparent transition-all duration-300'>
                         <FontAwesomeIcon icon={faLinkedin}/>
                     </div>
-                    <div className='w-11 h-11 bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#25d366] hover:text-white hover:border-transparent transition-all duration-300'>
+                    <div className='w-11 h-11 bg-[#1a1a1a] cursor-pointer border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-[#25d366] hover:text-white hover:border-transparent transition-all duration-300'>
                         <FontAwesomeIcon icon={faWhatsapp}/>
                     </div>
-                    <div className='w-11 h-11 bg-[#1a1a1a] border border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:text-white hover:border-transparent transition-all duration-300'>
+                    <div className='w-11 h-11 bg-[#1a1a1a] border cursor-pointer border-[#262626] rounded-xl flex items-center justify-center text-neutral-400 hover:bg-orange-500 hover:text-white hover:border-transparent transition-all duration-300'>
                         <FontAwesomeIcon icon={faLink}/>
                     </div>
                 </div>

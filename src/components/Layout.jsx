@@ -9,7 +9,7 @@ export default function Layout() {
 
   const [cat,setCat]=useState('جميع المقالات')
   const [searched,setSearched]=useState('')
-  const [filter,setFilter]=useState('')
+  const [filter,setFilter]=useState(false)
   const [art,setArt]=useState(0)
   const [scroll,setScroll]=useState(false)
   return (

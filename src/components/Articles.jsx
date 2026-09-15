@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import posts from "../assets/posts.json";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -41,13 +41,16 @@ console.log(filtered);
 
   return (
     <div
+    id="arts"
       dir="rtl"
       className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 scroll-mt-[146px]"
     >
-      <div className="flex justify-between items-center mb-6">
+      <div  className="flex justify-between items-center mb-6">
         <span className="text-neutral-400 font-medium">
           عرض <span className="font-bold text-white">{filtered.length}</span>{" "}
           مقالات
+
+          {cat!="جميع المقالات"?<span> في  <span className="fw-semibold text-orange-500">{cat}</span></span>:''}
         </span>
 
         <div className="flex gap-2">
@@ -65,7 +68,7 @@ console.log(filtered);
               onClick={() => {
                 setFilter(false);
                 setCat("جميع المقالات");
-                setSearched([]);
+                setSearched("");
               }}
               className="text-sm text-neutral-500 hover:text-orange-500 flex items-center gap-1 transition-colors"
             >
@@ -77,7 +80,7 @@ console.log(filtered);
           )}
         </div>
       </div>
-      <div className={`grid ${grid?' grid-cols-1  md:grid-cols-2 lg:grid-cols-3':'grid-cols-1'} gap-8`}>
+      <div  className={`grid ${grid?' grid-cols-1  md:grid-cols-2 lg:grid-cols-3':'grid-cols-1'} gap-8`}>
         {filtered.slice(art, art + 6).map((item, index) => {
           return (
             <Link to={`/blog/${item.slug}`} key={index}>
@@ -89,7 +92,7 @@ console.log(filtered);
                       {item.category}
                     </span>
                     <img
-                      src={item.image || img1}
+                      src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
                     />
@@ -128,7 +131,7 @@ console.log(filtered);
                 <div className={`  flex justify-between mt-auto items-center ${grid?'border-t border-[#262626]':''}  pt-4 mt-4`}>
                   <div className="flex items-center gap-3">
                     <img
-                      src={item.author?.avatar || img1}
+                      src={item.author?.avatar}
                       alt={item.author?.name}
                       className="w-10 h-10 rounded-full object-cover border border-neutral-700"
                       />
@@ -169,7 +172,7 @@ console.log(filtered);
           <button   onClick={() => {
                 setFilter(false);
                 setCat("جميع المقالات");
-                setSearched([]);
+                setSearched("");
               }} className="hover:-translate-y-0.5 cursor-pointer duration-300 transition-all flex bg-gradient items-center font-semibold justify-center text-white px-6 py-4 rounded-full  gap-2 mx-auto mt-6">
             <FontAwesomeIcon icon={faRotate}/>
             إعادة تعيين الفلاتر

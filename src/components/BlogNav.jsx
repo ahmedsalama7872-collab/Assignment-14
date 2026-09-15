@@ -1,8 +1,7 @@
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
 
-export default function BlogNav({cat,setCat,searched,setSearched,filter,setFilter,art,setArt}) {
+export default function BlogNav({cat,setCat,searched,setSearched,setFilter,setArt}) {
    
 
   return (
@@ -10,7 +9,7 @@ export default function BlogNav({cat,setCat,searched,setSearched,filter,setFilte
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
             <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
                 <div className='relative w-full md:w-80'>
-                    <input type="text" name="" onChange={(e)=>{setSearched(e.target.value); setFilter(e.target.value.trim() !== "")}}  value={searched||""} placeholder='ابحث في المقالات...' className='focus:border-orange-500 bg-[#161616] text-neutral-300 rounded-2xl border border-[#262626] outline-0 w-full px-5 py-3 pr-12' id="" />
+                    <input type="text" name="" onChange={(e)=>{setSearched(e.target.value);setArt(0); setFilter(e.target.value.trim() !== "")}}  value={searched||""} placeholder='ابحث في المقالات...' className='focus:border-orange-500 bg-[#161616] text-neutral-300 rounded-2xl border border-[#262626] outline-0 w-full px-5 py-3 pr-12' id="" />
                     <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500'/>
                 </div>
                 <div className='flex flex-wrap items-center justify-center gap-2'>

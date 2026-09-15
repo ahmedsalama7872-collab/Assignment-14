@@ -46,8 +46,8 @@ import { Link } from "react-router-dom";
             {/* card */}
 {posts.posts?.slice(0, 3).map((item, index) => (
  
-<Link to={`/blog/${item.slug}`}>
-        <div key={index} dir="rtl" className=" grid grid-cols-1 group overflow-hidden md:grid-cols-2 gap-0 rounded-2xl border border-[#262626] hover:border-orange-500/30">
+<Link key={index} to={`/blog/${item.slug}`}>
+        <div  dir="rtl" className=" grid grid-cols-1 group overflow-hidden md:grid-cols-2 gap-0 rounded-2xl border border-[#262626] hover:border-orange-500/30">
        {/* image */}
         <div className="overflow-hidden relative">
 
