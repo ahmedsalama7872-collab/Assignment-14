@@ -99,7 +99,7 @@ export default function Navbar() {
           <NavLink
             to="/blog"
             onClick={() => setIsOpen(false)}
-            className={`w-full rounded-xl h-10 flex items-center px-6 text-sm transition-all cursor-pointer ${location.pathname === "/blog" ? "bg-orange-500/15 border border-orange-500/50 text-orange-500 font-medium" : "text-neutral-300 hover:bg-[#1a1a1a]"}`}
+            className={`w-full rounded-xl h-10 flex items-center px-6 text-sm transition-all cursor-pointer ${location.pathname.includes("/blog")  ? "bg-orange-500/15 border border-orange-500/50 text-orange-500 font-medium" : "text-neutral-300 hover:bg-[#1a1a1a]"}`}
           >
             المدونة
           </NavLink>
