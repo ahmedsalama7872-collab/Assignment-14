@@ -4,7 +4,7 @@ import Layout from './components/Layout.jsx'
 import { createBrowserRouter, RouterProvider,createHashRouter } from 'react-router-dom'
 import Latest from './components/Latest.jsx'
 import Blog from './Pages/Blog.jsx'
-
+import NotFound from './Pages/NotFound.jsx'
 
 
 
@@ -15,7 +15,8 @@ const routes = createHashRouter([
     {path:"home" ,element:<Home/>},
   {path:"blog",element:<Blog/>},
   {path:'blog/:slug', element:<Post/>},
-{path:"about",element:<Latest/>}]} 
+{path:"about",element:<NotFound/>},
+{path:'*',element:<NotFound/>}]} 
 
 ]);
 
