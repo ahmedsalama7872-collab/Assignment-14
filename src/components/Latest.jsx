@@ -3,19 +3,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import posts from '../assets/posts.json';
+import posts from "../assets/posts.json";
 import { Link } from "react-router-dom";
-
 
 export default function Latest() {
   return (
     <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-orange-500/5 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-full bg-gradient-to-r from-orange-500/5 to-transparent"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* الهيدر */}
         <div className="flex flex-col-reverse  md:flex-row justify-between items-end md:items-end mb-16 gap-6">
-          <Link to={'/blog'} className="flex items-center gap-2 text-orange-500 cursor-pointer group font-medium">
+          <Link
+            to={"/blog"}
+            className="flex items-center gap-2 text-orange-500 cursor-pointer group font-medium"
+          >
             <span className="group-hover:-translate-x-1 transition-transform duration-300">
               <FontAwesomeIcon icon={faArrowLeftLong} />
             </span>
@@ -39,71 +39,66 @@ export default function Latest() {
           </div>
         </div>
 
-        {/* شبكة الكروت */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" dir="rtl">
           {posts.posts?.slice(3, 6).map((item, index) => (
-           <Link key={index}  to={`/blog/${item.slug}`}>
-           <div 
-              
-              className="group bg-[#161616] hover:-translate-y-1 rounded-2xl border border-[#262626] hover:border-orange-500/30 overflow-hidden flex flex-col justify-between transition-all duration-300"
-            >
-              <div>
-                {/* صورة الكارد */}
-                <div className="relative overflow-hidden h-60">
-                  <span className="absolute top-4 z-20 right-4 px-3 py-1 bg-black/70 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/10">
-                    {item.category}
-                  </span>
-                  <img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" 
-                  />
-                </div>
-
-                {/* محتوى الكارد */}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 text-neutral-500 text-xs mb-3">
-                    <span className="flex items-center gap-1">
-                      <FontAwesomeIcon icon={faClock} /> {item.readTime}
+            <Link key={index} to={`/blog/${item.slug}`}>
+              <div className="group bg-[#161616] hover:-translate-y-1 rounded-2xl border border-[#262626] hover:border-orange-500/30 overflow-hidden flex flex-col justify-between transition-all duration-300">
+                <div>
+                  <div className="relative overflow-hidden h-60">
+                    <span className="absolute top-4 z-20 right-4 px-3 py-1 bg-black/70 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/10">
+                      {item.category}
                     </span>
-                    <span>•</span>
-                    <span>{item.date}</span>
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
+                    />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors duration-300 leading-snug">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-neutral-400 text-sm line-clamp-2 leading-relaxed">
-                    {item.excerpt}
-                  </p>
-                </div>
-              </div>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 text-neutral-500 text-xs mb-3">
+                      <span className="flex items-center gap-1">
+                        <FontAwesomeIcon icon={faClock} /> {item.readTime}
+                      </span>
+                      <span>•</span>
+                      <span>{item.date}</span>
+                    </div>
 
-              {/* أسفل الكارد (الكاتب وسهم الانتقال) */}
-              <div className="p-6 pt-0 flex justify-between items-center mt-4">
-                <div className="flex items-center gap-3">
-                  <img 
-                    src={item.author?.avatar} 
-                    alt={item.author?.name} 
-                    className="w-10 h-10 rounded-full object-cover border border-neutral-700" 
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-white text-sm font-medium">{item.author?.name}</span>
-                    <span className="text-xs text-neutral-500">مبتكر محتوى</span>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-orange-500 transition-colors duration-300 leading-snug">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-neutral-400 text-sm line-clamp-2 leading-relaxed">
+                      {item.excerpt}
+                    </p>
                   </div>
                 </div>
 
-                <div className="w-8 h-8 rounded-full bg-orange-500/10 flex text-orange-500 group-hover:text-white items-center justify-center group-hover:bg-orange-500 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
-                  <FontAwesomeIcon icon={faAngleLeft} className="text-sm" />
+                <div className="p-6 pt-0 flex justify-between items-center mt-4">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={item.author?.avatar}
+                      alt={item.author?.name}
+                      className="w-10 h-10 rounded-full object-cover border border-neutral-700"
+                    />
+                    <div className="flex flex-col">
+                      <span className="text-white text-sm font-medium">
+                        {item.author?.name}
+                      </span>
+                      <span className="text-xs text-neutral-500">
+                        مبتكر محتوى
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="w-8 h-8 rounded-full bg-orange-500/10 flex text-orange-500 group-hover:text-white items-center justify-center group-hover:bg-orange-500 transition-colors duration-300 border border-orange-500/20 group-hover:border-transparent">
+                    <FontAwesomeIcon icon={faAngleLeft} className="text-sm" />
+                  </div>
                 </div>
               </div>
-
-            </div>
             </Link>
           ))}
         </div>
-
       </div>
     </section>
   );

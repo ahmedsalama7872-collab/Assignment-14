@@ -4,7 +4,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faPenNib } from "@fortawesome/free-solid-svg-icons";
 import { faFolderOpen } from "@fortawesome/free-solid-svg-icons";
-import { faUsers} from "@fortawesome/free-solid-svg-icons";
+import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -27,7 +27,8 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight  mx-auto text-center">
-          اكتشف <span className="text-gradient">فن</span> <br /> التصوير الفوتوغرافي
+          اكتشف <span className="text-gradient">فن</span> <br /> التصوير
+          الفوتوغرافي
         </h1>
         <p className="text-neutral-400 text-xl md:text-2xl max-w-2xl text-center mb-10">
           انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير
@@ -37,7 +38,6 @@ export default function Hero() {
             to={"/about"}
             className="flex gap-3 items-center text-white justify-center hover:bg-main/10 hover:text-main duration-300 transition-all hover:border-main border px-7 py-4 border-white/30 rounded-full"
           >
-            
             <span>اعرف المزيد</span>
             <FontAwesomeIcon icon={faCircleExclamation} />
           </Link>
@@ -55,7 +55,6 @@ export default function Hero() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          
           <div className="bg-[#161616cc] border border-[#262626] flex  flex-col justify-center items-center rounded-2xl p-4 hover:scale-105 transition-transform duration-300">
             <FontAwesomeIcon
               icon={faPenNib}
@@ -77,9 +76,9 @@ export default function Hero() {
               icon={faUsers}
               className="text-orange-500 mb-1 clip fa-xl"
             />
-            <span className="text-3xl text-gradient font-semibold" dir="rtl">+10ألف
-
-</span>
+            <span className="text-3xl text-gradient font-semibold" dir="rtl">
+              +10ألف
+            </span>
             <span className="text-neutral-400">قارئ</span>
           </div>
           <div className="bg-[#161616cc] border border-[#262626] flex  flex-col justify-center items-center rounded-2xl p-4 hover:scale-105 transition-transform duration-300">
@@ -87,12 +86,9 @@ export default function Hero() {
               icon={faNewspaper}
               className="text-orange-500 mb-1 clip fa-xl"
             />
-            <span className="text-3xl text-gradient font-semibold">+50
-
-</span>
+            <span className="text-3xl text-gradient font-semibold">+50</span>
             <span className="text-neutral-400">مقالة</span>
           </div>
-
         </div>
       </div>
     </section>

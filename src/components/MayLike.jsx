@@ -1,17 +1,13 @@
 import { faArrowLeftLong, faImages } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import posts from "../assets/posts.json"
+import posts from "../assets/posts.json";
 import { Link } from "react-router-dom";
 
-export default function MayLike({post}) {
-
-
-    let filtered= posts.posts.filter((po)=>{
-        return po.category===post.category&&po.slug!==post.slug})
-    
-    
-
+export default function MayLike({ post }) {
+  let filtered = posts.posts.filter((po) => {
+    return po.category === post.category && po.slug !== post.slug;
+  });
 
   return (
     <>
@@ -48,42 +44,43 @@ export default function MayLike({post}) {
           </Link>
         </div>
 
-
-
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-        {/* like card */}
-       {filtered.slice(0,3).map((card)=>{
-        return ( <Link to={`/blog/${card.slug}`} key={card.id}>
-        <div className="group relative bg-[#111111] rounded-2xl  border border-[#262626] hover:border-orange-500/30 transition-all duration-500 grid-flow-col grid grid-rows-[190px_110px]  overflow-hidden">
-            <div className="overflow-hidden relative">
-                <img src={card.image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"/>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
-                <div className="absolute top-4 right-4 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">{card.category}</div>
-            </div>
-            <div className=" p-4">
-                <h3 className="font-bold text-white group-hover:text-orange-500 transition-colors line-clamp-2 mb-3">{card.title}</h3>
-                <div className="flex justify-between mt-auto text-sm text-neutral-500 items-center">
-                    <div className="flex gap-3 ">
-                        <img src={card.author.avatar} className="w-6 rounded-full" alt="" />
-                        <h4>{card.author.name}</h4>
+          {filtered.slice(0, 3).map((card) => {
+            return (
+              <Link to={`/blog/${card.slug}`} key={card.id}>
+                <div className="group relative bg-[#111111] rounded-2xl  border border-[#262626] hover:border-orange-500/30 transition-all duration-500 grid-flow-col grid grid-rows-[190px_110px]  overflow-hidden">
+                  <div className="overflow-hidden relative">
+                    <img
+                      src={card.image}
+                      alt=""
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent"></div>
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-orange-500 text-white text-xs font-bold rounded-full">
+                      {card.category}
                     </div>
-                    <span>{card.readTime}</span>
+                  </div>
+                  <div className=" p-4">
+                    <h3 className="font-bold text-white group-hover:text-orange-500 transition-colors line-clamp-2 mb-3">
+                      {card.title}
+                    </h3>
+                    <div className="flex justify-between mt-auto text-sm text-neutral-500 items-center">
+                      <div className="flex gap-3 ">
+                        <img
+                          src={card.author.avatar}
+                          className="w-6 rounded-full"
+                          alt=""
+                        />
+                        <h4>{card.author.name}</h4>
+                      </div>
+                      <span>{card.readTime}</span>
+                    </div>
+                  </div>
                 </div>
-            </div>
+              </Link>
+            );
+          })}
         </div>
-
-
-
-        </Link>)
-       })}
-
-
-        </div>
-
-
       </section>
     </>
   );

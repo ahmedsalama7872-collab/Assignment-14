@@ -1,8 +1,8 @@
-import BlogHero from '../components/BlogHero'
-import Articles from '../components/Articles'
-import BlogNav from '../components/BlogNav'
-import { useOutletContext } from 'react-router-dom';
-import { useEffect } from 'react';
+import BlogHero from "../components/BlogHero";
+import Articles from "../components/Articles";
+import BlogNav from "../components/BlogNav";
+import { useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
 export default function Blog() {
   useEffect(() => {
     window.scrollTo({
@@ -10,7 +10,7 @@ export default function Blog() {
       behavior: "smooth",
     });
   }, []);
- const {
+  const {
     cat,
     setCat,
     searched,
@@ -20,21 +20,38 @@ export default function Blog() {
     art,
     setArt,
     scroll,
-    setScroll
+    setScroll,
   } = useOutletContext();
- useEffect(() => {
-  if (scroll) {
-    window.scrollTo(0, 0);
-    setScroll(false);
-  }
-}, [scroll, setScroll]);
+  useEffect(() => {
+    if (scroll) {
+      window.scrollTo(0, 0);
+      setScroll(false);
+    }
+  }, [scroll, setScroll]);
 
-    return (
-
-    <section className='mt-20 bg-[#0a0a0a]  '>
-        <BlogHero/>
-        <BlogNav cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter} art={art} setArt={setArt}/>
-        <Articles cat={cat} setCat={setCat} searched={searched} setSearched={setSearched} filter={filter} setFilter={setFilter} art={art} setArt={setArt}/>
+  return (
+    <section className="mt-20 bg-[#0a0a0a]  ">
+      <BlogHero />
+      <BlogNav
+        cat={cat}
+        setCat={setCat}
+        searched={searched}
+        setSearched={setSearched}
+        filter={filter}
+        setFilter={setFilter}
+        art={art}
+        setArt={setArt}
+      />
+      <Articles
+        cat={cat}
+        setCat={setCat}
+        searched={searched}
+        setSearched={setSearched}
+        filter={filter}
+        setFilter={setFilter}
+        art={art}
+        setArt={setArt}
+      />
     </section>
-  )
+  );
 }
